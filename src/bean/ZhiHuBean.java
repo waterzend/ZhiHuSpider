@@ -20,7 +20,7 @@ public class ZhiHuBean {
 		answers = new ArrayList<String>();
 		// 判断url是否合法
 		if (getRealUrl(url)) {
-			System.out.println("正在抓取" + zhihuUrl);
+			System.out.println("正在抓取知乎链接：" + zhihuUrl);
 			// 根据url获取该问答的细节
 			String content = Spider.SendGet(zhihuUrl);
 			Pattern pattern;

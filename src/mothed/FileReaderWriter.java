@@ -105,7 +105,6 @@ public class FileReaderWriter {
 			System.out.println("第 " + i + "张图片下载完毕......");
 			i++;
 		}
-		System.out.println("图片下载完毕.......................... ");
 		return isSuccess;
 	}
 }
