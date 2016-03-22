@@ -4,13 +4,16 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import mothed.Spider;
+import mothed.Util;
 
 public class ZhiHuBean {
-	public String question;// 问题
-	public String questionDescription;// 问题描述
-	public String zhihuUrl;// 网页链接
-	public ArrayList<String> answers;// 存储所有回答的数组
+	String question;// 问题
+	
+	String questionDescription;// 问题描述
+	
+	String zhihuUrl;// 网页链接
+	
+	ArrayList<String> answers;// 存储所有回答的数组
 
 	// 构造方法初始化数据
 	public ZhiHuBean(String url) {
@@ -22,7 +25,7 @@ public class ZhiHuBean {
 		if (getRealUrl(url)) {
 			System.out.println("正在抓取知乎链接：" + zhihuUrl);
 			// 根据url获取该问答的细节
-			String content = Spider.SendGet(zhihuUrl);
+			String content = Util.SendGet(zhihuUrl);
 			Pattern pattern;
 			Matcher matcher;
 			// 匹配标题

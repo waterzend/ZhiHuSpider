@@ -1,11 +1,14 @@
 package test;
 
-import java.util.ArrayList;
-import bean.ZhiHuPicBean;
-import mothed.FileReaderWriter;
+import mothed.Spider;
+
 
 /**
- * 抓取知乎图片并下载 抓取知乎推荐内容并写入本地
+ * 主函数
+ * 功能1：抓取知乎指定问题下的图片并下载 
+ * 功能2：爬取知乎指定话题下所有精华问题最高得票人的所有信息，并输入到本地数据库
+ * 功能3：抓取知乎推荐内容并写入本地
+ * 选用任意一个方法，只需将url匹配到当前方法就行
  * 
  * @author KKys
  *
@@ -13,47 +16,34 @@ import mothed.FileReaderWriter;
 public class ZhiHuMain {
 
 	public static void main(String[] args) throws Exception {
-		/**
-		 * 爬知乎图片，并下载到本地
+		
+		//定义你要抓取页面的url，格式参照下文
+		//当前url对应方法二
+		String url = "https://www.zhihu.com/topic/19579552/top-answers";
+		
+		/*
+		 * 方法一：抓取知乎图片，并下载到本地文件夹
+		 * 下载地址在Spider.downloadPic中修改
+		 * url型如"https://www.zhihu.com/question/28594126";
 		 */
-		// 定义即将访问的链接
-		String url = "https://www.zhihu.com/question/28594126";
-		// 构造方法传url，获取ZhiHuPicBean
-		ZhiHuPicBean myZhihu = new ZhiHuPicBean(url);
-		// 获取ZhiHuPicBean中的图片列表
-		ArrayList<String> picList = myZhihu.getZhihuPicUrl();
-		// 打印结果
-		System.out.println("");
-		System.out.println("标题：" + myZhihu.getQuestion());
-		System.out.println("");
-		// 循环，在控制台打印图片地址
-		for (String zhiHuPic : picList) {
-			System.out.println(zhiHuPic);
-		}
-		System.out.println("");
-		//定义下载路径
-		String addr = "D:/知乎爬虫/";
-		System.out.println("即将开始下载图片到"+addr+myZhihu.getQuestion());
-		System.out.println("");
-		System.out.println("开始下载................");
-		System.out.println("");
-		// 把图片下载到本地文件夹
-		FileReaderWriter.downLoadPics(myZhihu, addr);
-		System.out.println("");
-		System.out.println("图片下载完毕，请到"+addr+myZhihu.getQuestion()+"里去看看吧！！！");
+//		Spider.downloadPic(url);
+		
+		
 
-		/**
-		 * 爬知乎推荐的内容
+		/*
+		 * 方法二：爬取指定话题下所有精华问题最高得票人的信息，并输入到本地数据库
+		 * 
+		 * url型如
 		 */
-		// // 定义即将访问的链接
-		// String url = "https://www.zhihu.com/explore/recommendations";
-		// // 访问链接并获取页面内容
-		// String content = Spider.SendGet(url);
-		// // 获取该页面的所有的知乎对象
-		// ArrayList<ZhiHuBean> myZhihu = Spider.GetRecommendations(content);
-		// for (ZhiHuBean zhihu : myZhihu) {
-		// FileReaderWriter.writeIntoFile(zhihu.writeString(),"D:/知乎编辑推荐.txt",
-		// true);
-		// }
+		Spider.getTopUserInfo(url);
+		
+		
+		
+		/*
+		 * 方法三：爬知乎推荐的内容，到本地txt文件
+		 * 下载地址在Spider.downloadCommend中修改
+		 * url:"https://www.zhihu.com/explore/recommendations"
+		 */
+//		Spider.downloadCommend(url);
 	}
 }

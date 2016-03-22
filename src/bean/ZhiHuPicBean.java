@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import mothed.Spider;
+import mothed.Util;
 
 /**
  * 知乎图片bean
@@ -14,9 +14,11 @@ import mothed.Spider;
  */
 public class ZhiHuPicBean {
 
-	public String zhihuUrl;// 网页链接
-	public String question;// 问题;
-	public ArrayList<String> zhihuPicUrl;// 图片链接
+    String zhihuUrl;// 网页链接
+    
+	String question;// 问题;
+	
+	ArrayList<String> zhihuPicUrl;// 图片链接
 
 	public String getQuestion() {
 		return question;
@@ -42,7 +44,7 @@ public class ZhiHuPicBean {
 		if (getRealUrl(url)) {
 			System.out.println("正在抓取知乎链接：" + url);
 			// 根据url获取该问答的细节
-			String content = Spider.SendGet(url);
+			String content = Util.SendGet(url);
 			Pattern pattern;
 			Matcher matcher;
 			// 匹配标题
