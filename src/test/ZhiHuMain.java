@@ -18,25 +18,23 @@ public class ZhiHuMain {
 	public static void main(String[] args) throws Exception {
 		
 		//定义你要抓取页面的url，格式参照下文
-		//当前url对应方法二
-		String url = "https://www.zhihu.com/topic/19579552/top-answers";
+		//当前url对应方法一
+		String url = "https://www.zhihu.com/question/28594126";
 		
 		/*
 		 * 方法一：抓取知乎图片，并下载到本地文件夹
 		 * 下载地址在Spider.downloadPic中修改
 		 * url型如"https://www.zhihu.com/question/28594126";
 		 */
-//		Spider.downloadPic(url);
+		Spider.downloadPic(url);
 		
 		
-
 		/*
 		 * 方法二：爬取指定话题下所有精华问题最高得票人的信息，并输入到本地数据库
-		 * 
-		 * url型如
+		 * 数据库信息在Spider.getTopUserInfo中修改
+		 * url型如"https://www.zhihu.com/topic/19570261/top-answers"
 		 */
-		Spider.getTopUserInfo(url);
-		
+//		Spider.getTopUserInfo(url);
 		
 		
 		/*
