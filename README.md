@@ -6,50 +6,34 @@
 详情地址：https://zhuanlan.zhihu.com/p/24973518</br>
 展示地址：http://kkys.online/zhihu/spider.html</br>
 目录：src/main/java/java/zhiHuUserSprider </br>
-    
-    -----------------------------------------
-    
-    2016.12.1更新:
-    添加爬取京东所有商品
-    目录：src/main/java/java/JDCrawler 
-    
-    -----------------------------------------
-    
-    2016.3.22更新:
-    添加爬取某话题下精华问题中第一个用户的信息
-    利用JDBC把信息导入本地或远程数据库中
-    用来进行数据分析或数据挖掘
-    并且优化了代码，层次更加清晰
-     
-    -----------------------------------------
-   
-    2016.3.18
-    原生Java无框架无jar包
-    实现爬取知乎问题中的图片和知乎推荐内容
-    并下载到本地
-    通俗易懂，简介明了，可扩展性更高
+
+2016.12.1更新:
+----
+添加爬取京东所有商品</br>
+目录：src/main/java/java/JDCrawler </br>
+
+2016.3.22更新:
+----
+添加爬取某话题下精华问题中第一个用户的信息</br>
+利用JDBC把信息导入本地或远程数据库中</br>
+用来进行数据分析或数据挖掘</br>
+并且优化了代码，层次更加清晰</br>
+
+2016.3.18
+----
+原生Java无框架无jar包</br>
+实现爬取知乎问题中的图片和知乎推荐内容</br>
+并下载到本地</br>
+通俗易懂，简介明了，可扩展性更高</br>
     
 
 #ZhiHuSpider结构介绍
 
     zhihu      早期爬虫
-    
-         bean
-         
-               ZhiHuBean.java ----- 爬取推荐内容的bean
-               ZhiHuPicBean.java ----- 爬取问题中图片地址的bean
-               ZhiHuUserBean.java ----- 爬取用户信息的bean
-         mothod
-               FlieReadWriter.java ----- 创建文件，下载推荐内容或图片的方法
-               Spider.java() ----- 目前支持的三种功能方法
-               Util.java() ----- 工具类
-         test
-               Main.java ----- 测试，抓取baidu的logo
-               ZhiHuMain.java ----- 测试，下载图片及推荐内容、爬取用户信息
                
     JDCrawler   爬取京东商品信息
     
-    zhihuUser   爬取百万级用户信息
+    zhihuUser   爬取知乎百万级用户信息
     
 #想法与问题...
 
