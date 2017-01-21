@@ -1,10 +1,11 @@
 # ZhiHuSpider简介
 
-    2017.1.21更新:
-    爬取知乎20万用户信息并用Echarts展示
-    详情地址：https://zhuanlan.zhihu.com/p/24973518
-    展示地址：http://kkys.online/zhihu/spider.html
-    目录：src/main/java/java/zhiHuUserSprider 
+2017.1.21更新:
+----
+爬取知乎20万用户信息并用Echarts展示</br>
+详情地址：https://zhuanlan.zhihu.com/p/24973518</br>
+展示地址：http://kkys.online/zhihu/spider.html</br>
+目录：src/main/java/java/zhiHuUserSprider </br>
     
     -----------------------------------------
     
