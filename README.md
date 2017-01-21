@@ -1,4 +1,5 @@
 # ZhiHuSpider简介
+
     2017.1.21更新:
     爬取知乎20万用户信息并用Echarts展示
     详情地址：https://zhuanlan.zhihu.com/p/24973518
@@ -31,7 +32,9 @@
 #ZhiHuSpider结构介绍
 
     zhihu      早期爬虫
+    
          bean
+         
                ZhiHuBean.java ----- 爬取推荐内容的bean
                ZhiHuPicBean.java ----- 爬取问题中图片地址的bean
                ZhiHuUserBean.java ----- 爬取用户信息的bean
